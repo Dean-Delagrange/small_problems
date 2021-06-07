@@ -22,3 +22,8 @@ puts digit_list(444) == [4, 4, 4]             # => true
 def digit_list(number)
   number.to_s.chars.map(&:to_i)  # (&:to_i means {|char| char.to_i}
 end
+
+#First, we convert the number to a string, then split it into an array 
+#of numeric characters. This array is almost what we want, but we need 
+#an array of numbers, not an array of strings. Enumerable#map comes 
+#to the rescue. 
