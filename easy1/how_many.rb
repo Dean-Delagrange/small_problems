@@ -1,28 +1,20 @@
 # how_many.rb
 # method that counts the number of occurences of each element in a given array
-# my solution to the problem
-=begin
-def count_occurrences(array)
-  uniq = array.uniq
-  uniq.each do |ele|
-    puts "#{ele} => #{array.count(ele)}"
-  end
-end
-=end
-
-
-#There was was with a Hash and is as follows:
+# print the count in a Hash format (ie create a hash)
 
 def count_occurrences(array)
-  occurence = {}
-
-  array.uniq.each do |element|
-    word = element.downcase
-    occurence[word] = array.count(word)
+  hash = {}
+  downcase = []
+  array.each do |element|
+    downcase << element.downcase
   end
   
-  occurence.each do |element, count|
-    puts "#{element} => #{count}"
+  downcase.uniq.each do |key|
+    hash[key] = downcase.count(key)
+  end
+  
+  hash.each do |key, count|
+    puts "#{key} => #{count}"
   end
 end
 
